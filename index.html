@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dropdown Events</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+
+    <h1 style="text-align:center">
+        Welcome to a simple SDOH Life Expectancy Calculator!
+    </h1>
+
+    <p style="text-align:center">
+        DISCLAIMER: Please note that this result is to be taken as ab illustrative example of how Social Determinates Of Health can affect
+        important health outcomes. While the prediction provided below is based on real data, the outcome is only loosely connected
+        to the final outcome for a number of reasons. Firstly, the data was provided at an aggregated county level and has been
+        loosely translated to individual level questions for the purpose of this web application.
+        Secondly, there are many factors that determine an individual's life expectancy and SDOH are only a small portion.
+        All of the effects of other factors (and their possible interactions with these SDOH factors) are not taken into account.
+        Outputs are representative of average outcomes provided at a county level.
+        Also, please keep in mind that correlation does not mean causation. In other words, we cannot be certain that while physical
+        distress causes a lower life expectancy- just that the two are correlated.
+        Data used can be found at https://www.ahrq.gov/sdoh/data-analytics/sdoh-data.html
+    </p>
+
+    <h3 >1) How frequently do you feel PHYSICALLY distressed due to things such as living circumstances, finances, work, social pressures?</h3>
+    <select id="physicalDistress">
+        <option value="A">Very Infrequently (bottom 20% of all people in the United States)</option>
+        <option value="B">Infrequently (bottomw 35% of all people in the United States)</option>
+        <option value="C">No more than average</option>
+        <option value="D">More freqently than most (more than 65% of all people in the United States)</option>
+        <option value="E">Very frequently (more than 80% of all people in the United States)</option>
+    </select>
+
+    <h3>2) How frequently are you not sure if you'll have enough food (or money for food) this month?</h3>
+    <select id="foodDistress">
+        <option value="A">Never</option>
+        <option value="B">Rarely, but sometimes</option>
+        <option value="C">Often</option>
+    </select>
+
+    <h3>3) How frequently are severly sleep deprived?</h3>
+    <select id="sleepDistress">
+        <option value="A">Rarely</option>
+        <option value="B">Sometimes</option>
+        <option value="C">Often</option>
+    </select>
+
+    <h3>4) How frequently do you feel EMOTIONALLY distressed due to things such as living circumstances, finances, work, social pressures?</h3>
+    <select id="emotionalDistress">
+        <option value="A">Very Infrequently (bottom 20% of all people in the United States)</option>
+        <option value="B">Infrequently (bottomw 35% of all people in the United States)</option>
+        <option value="C">No more than average</option>
+        <option value="D">More freqently than most (more than 65% of all people in the United States)</option>
+        <option value="E">Very frequently (more than 80% of all people in the United States)</option>
+    </select>
+
+    <h3>5) What range best describes your household's income?</h3>
+    <select id="incomeDistress">
+        <option value="A">Less than $40k</option>
+        <option value="B">Between $40k and $60k</option>
+        <option value="C">More than $60k</option>
+    </select>
+
+    <h3>6) Do you own your home (even if you have a mortgage)?</h3>
+    <select id="homeOwnership">
+        <option value="A">Yes</option>
+        <option value="B">No</option>
+    </select>
+
+    <h3>7) Are you frequently at risk of not being able to pay rent or mortgage payments?</h3>
+    <select id="homeDistress">
+        <option value="A">No</option>
+        <option value="B">Yes</option>
+    </select>
+
+    <h3>8) Did you graduate high school (or plan to if you have not reached the appropriate age)?</h3>
+    <select id="highschool">
+        <option value="A">Yes</option>
+        <option value="B">No</option>
+    </select>
+
+    <h3 style="color:blue">Based these answers you may have a life expectancy of:</h3>
+    <body>
+        <!-- <h1 id="header">Hello World</h1> -->
+        <h1 id="score" style="padding: 10px; border: 5px solid blue;">Select answer to get a predicted life expectancy</h1>
+    
+    
+    <script src="data.js"></script>
+    <script src="plots.js"></script>
+</body>
+</html>
