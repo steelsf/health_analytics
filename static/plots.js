@@ -11,6 +11,7 @@ d3.selectAll("#highschool").on("change", getData);
 
 // Function called by DOM changes
 function getData() {
+  console.log("running getData()")
   var Q1 = d3.select("#emotionalDistress");
   var Q2 = d3.select("#physicalDistress");
   var Q3 = d3.select("#foodDistress");
